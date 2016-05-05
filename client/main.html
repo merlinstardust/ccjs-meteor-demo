@@ -1,0 +1,27 @@
+<head>
+  <title>simple</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> ChatInput}}
+  {{> ChatMessages}}
+</body>
+
+<template name="ChatInput">
+  <form>
+    <input name="author" placeholder="author">
+    <input name="text" placeholder="message">
+    <button type="submit">Send</button>
+  </form>
+</template>
+
+<template name="ChatMessages">
+  {{#each messages}}
+    <div>
+      <strong>{{author}}</strong>
+      <span>{{text}}</span>
+    </div>
+  {{/each}}
+</template>
